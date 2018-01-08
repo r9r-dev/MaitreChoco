@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,17 +24,41 @@ namespace bot.ConsoleClient
 
         static async Task Main(string[] args)
         {
-            _client = new DiscordSocketClient();
-            _wu = new WeatherClient(_wutoken);
-            _luis = new LuisClient("ef487147-41bf-4514-9f70-1c539f24943c", _luistoken, true, "westeurope");
+            //_client = new DiscordSocketClient();
+            //_wu = new WeatherClient(_wutoken);
+            //_luis = new LuisClient("ef487147-41bf-4514-9f70-1c539f24943c", _luistoken, true, "westeurope");
 
-            _client.Log += DiscordOnLog;
-            _client.MessageReceived += DiscordOnMessageReceived;
+            //_client.Log += DiscordOnLog;
+            //_client.MessageReceived += DiscordOnMessageReceived;
             
-            await _client.LoginAsync(TokenType.Bot, _discordtoken);
-            await _client.StartAsync();
+            //await _client.LoginAsync(TokenType.Bot, _discordtoken);
+            //await _client.StartAsync();
+
+            var wg = new WordGenerator();
+            wg.Load(@"D:\dev\github\MaitreChoco\ressources\data\FR.txt");
+
+            while (true)
+            {
+                var cnt = int.Parse(ReadKey().KeyChar.ToString());
+                WriteLine();
+                WriteLine(UppercaseFirst(wg.GetWord(cnt)));
+            }
+            
+            
+
 
             await Task.Delay(Timeout.Infinite);
+        }
+
+        static string UppercaseFirst(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                return string.Empty;
+            }
+            char[] a = s.ToCharArray();
+            a[0] = char.ToUpper(a[0]);
+            return new string(a);
         }
 
         private static async Task DiscordOnMessageReceived(SocketMessage msg)
