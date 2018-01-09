@@ -8,18 +8,40 @@
 
   <ItemGroup>
     <None Remove="maitrechoco.token" />
+    <None Remove="ressources\dictionaries\EN.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="maitrechoco.token">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <ApplicationDefinition Include="ressources\dictionaries\EN.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </ApplicationDefinition>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="2.0.0-beta-00854" />
     <PackageReference Include="Microsoft.Cognitive.LUIS" Version="2.0.2" />
     <PackageReference Include="WUnderground.Net" Version="2.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ressources\dictionaries\ENG.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ressources\dictionaries\ES.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ressources\dictionaries\FR.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ressources\dictionaries\IT.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ressources\dictionaries\SE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
