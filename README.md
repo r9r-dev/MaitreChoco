@@ -1,4 +1,4 @@
-![build status](https://ac7da.visualstudio.com/_apis/public/build/definitions/1ffc307b-edc2-4557-b962-93035580e533/3/badge)
+![version](https://img.shields.io/github/tag/rlcx/MaitreChoco.svg) ![build status](https://ac7da.visualstudio.com/_apis/public/build/definitions/1ffc307b-edc2-4557-b962-93035580e533/3/badge)
 
 # MaitreChoco
 Le bot de Cacao
