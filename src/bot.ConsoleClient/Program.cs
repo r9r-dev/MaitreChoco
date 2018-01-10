@@ -53,6 +53,7 @@ namespace bot.ConsoleClient
             if (msg.Content.ToLower().Contains("merci") && msg.MentionedUsers.Any(x => x.Id == _client.CurrentUser.Id))
             {
                 await msg.Channel.SendMessageAsync($"Ya pas de quoi :yum:");
+
                 return;
             }
 
